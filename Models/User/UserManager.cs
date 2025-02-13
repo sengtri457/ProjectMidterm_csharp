@@ -48,6 +48,9 @@ namespace MIdTerm_c_.Models.User
             {
                 while (true)
                 {
+                    Console.WriteLine("-----------------------------POS-SYSTEM---------------------------------");
+
+
                     Console.Write("Please Input Username: ");
                     string inputUsername = Console.ReadLine();
 
@@ -315,7 +318,7 @@ namespace MIdTerm_c_.Models.User
                     Console.WriteLine("3. Update Users");
                     Console.WriteLine("4. Search Users");
                     Console.WriteLine("5. Delete User");
-                    Console.WriteLine("6. Exit");
+                    Console.WriteLine("6. Back");
                     Console.Write("Select an option: ");
                     int choice = int.Parse(Console.ReadLine());
 
