@@ -184,7 +184,7 @@ namespace MIdTerm_c_.Models.User
             
         }
 
-        public void UpdateUser()
+        public void UpdateUser(string createdByUser)
         {
             try {
                 Console.Write("Enter User ID to update: ");
@@ -223,8 +223,8 @@ namespace MIdTerm_c_.Models.User
                 string newStatus = Console.ReadLine();
                 if (!string.IsNullOrEmpty(newStatus))
                     userFind.Status = bool.Parse(newStatus);
-/*                userFind.UpdateAt = DateTime.Now;
-                userFind.UpdateBy = loggedInUsername; */
+                userFind.UpdateAt = DateTime.Now;
+                userFind.UpdateBy = createdByUser;
 
                 Console.WriteLine("User updated successfully!");
             }
@@ -331,7 +331,7 @@ namespace MIdTerm_c_.Models.User
                             posManager.DisplayUsers();
                             break;
                         case 3:
-                            posManager.UpdateUser(); 
+                            posManager.UpdateUser(createdByUser); 
                             break;
                         case 4:
                             posManager.SearchUser();

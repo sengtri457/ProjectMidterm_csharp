@@ -24,7 +24,7 @@ namespace MIdTerm_c_.Models.UserRoles
         public static List<UserRoleManager> UserRoles = new List<UserRoleManager>();
         
 
-        public void AddUserRoles()
+        public void AddUserRoles(string createdByUser)
         {
             Console.Write("Enter the number of Users: ");
             number = int.Parse(Console.ReadLine());
@@ -41,9 +41,9 @@ namespace MIdTerm_c_.Models.UserRoles
                 Console.Write("Input UserRoleID= ");
                 userRoleManager.RoleId= int.Parse( Console.ReadLine()); 
                 userRoleManager.CreateAt = DateTime.Now;
-
                 userRoleManager.UpdateAt = DateTime.Now;
-
+                userRoleManager.CreateBy = createdByUser;
+                userRoleManager.UpdateBy = createdByUser;
                 UserRoles.Add(userRoleManager);
                 Console.WriteLine("User added successfully!");
             }
@@ -182,7 +182,7 @@ namespace MIdTerm_c_.Models.UserRoles
 
 
 
-        public void UserRolesManagement( )
+        public void UserRolesManagement(string createdByUser)
         {
             try
             {
@@ -204,7 +204,7 @@ namespace MIdTerm_c_.Models.UserRoles
                     switch (choice)
                     {
                         case 1:
-                            userRoles.AddUserRoles();
+                            userRoles.AddUserRoles(createdByUser);
                             break;
                         case 2:
                             userRoles.DisplayUsersRoles();

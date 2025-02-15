@@ -1,4 +1,5 @@
-﻿using MIdTerm_c_.Models.User;
+﻿using MIdTerm_c_.Models.Product;
+using MIdTerm_c_.Models.User;
 using MIdTerm_c_.Models.UserRoles;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace MIdTerm_c_.Models
                     Console.WriteLine("--------------------------------POS-SYSTEM----------------------------------");
                     Console.WriteLine("1. User-Management");
                 Console.WriteLine("2. UserRole-Management");
-                Console.WriteLine("3. Product-Management");
+                Console.WriteLine("3. Role-Management");
                 Console.WriteLine("4. View Product");
                 Console.WriteLine("5. Exit");
                 Console.Write("Please Select Option=  ");
@@ -32,13 +33,15 @@ namespace MIdTerm_c_.Models
                         break;
                     case 2:
                             UserRoleManager userRoleManager = new UserRoleManager();
-                            userRoleManager.UserRolesManagement();
+                            userRoleManager.UserRolesManagement(createdByUser);
                             break;
                     case 3:
-                        Console.WriteLine("Delete Product");
+                            RoleManager roleManager = new RoleManager();
+                            roleManager.RolesManagement(createdByUser);
                         break;
                     case 4:
-                        Console.WriteLine("View Product");
+                        ProductManager productManager = new ProductManager();
+                            productManager.ProductManagement(createdByUser);
                         break;
                     case 5:
                         Environment.Exit(0);
