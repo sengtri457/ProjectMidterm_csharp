@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\PosMenu.cs" />
+    <Compile Include="Models\UserRoles\RoleManager.cs" />
     <Compile Include="Models\UserRoles\UserRoleManager.cs" />
     <Compile Include="Models\User\UserManager.cs" />
     <Compile Include="Program.cs" />
