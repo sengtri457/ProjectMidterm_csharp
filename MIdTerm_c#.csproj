@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Models\PosMenu.cs" />
     <Compile Include="Models\Product\ProductManager.cs" />
+    <Compile Include="Models\Sales\SaleManager.cs" />
+    <Compile Include="Models\Sales\SalesDetailManager.cs" />
     <Compile Include="Models\UserRoles\RoleManager.cs" />
     <Compile Include="Models\UserRoles\UserRoleManager.cs" />
     <Compile Include="Models\User\UserManager.cs" />
@@ -54,5 +56,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

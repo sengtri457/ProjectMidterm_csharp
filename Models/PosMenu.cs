@@ -1,4 +1,5 @@
 ﻿using MIdTerm_c_.Models.Product;
+using MIdTerm_c_.Models.Sales;
 using MIdTerm_c_.Models.User;
 using MIdTerm_c_.Models.UserRoles;
 using System;
@@ -22,7 +23,12 @@ namespace MIdTerm_c_.Models
                 Console.WriteLine("2. UserRole-Management");
                 Console.WriteLine("3. Role-Management");
                 Console.WriteLine("4. View Product");
-                Console.WriteLine("5. Exit");
+                    Console.WriteLine("5.Sales");
+                    Console.WriteLine("6.SalesDetail");
+
+
+
+                    Console.WriteLine("7. Exit");
                 Console.Write("Please Select Option=  ");
                 int option = int.Parse(Console.ReadLine());
                 switch (option)
@@ -43,7 +49,16 @@ namespace MIdTerm_c_.Models
                         ProductManager productManager = new ProductManager();
                             productManager.ProductManagement(createdByUser);
                         break;
-                    case 5:
+                        case 5:
+                         SaleManager saleManager = new SaleManager();
+                            saleManager.SaleManagement();
+                            break;
+                        case 6:
+                            SalesDetailManager salesDetailManager = new SalesDetailManager();
+                            
+                            salesDetailManager.SaleDetailManagement();
+                            break;
+                        case 7:
                         Environment.Exit(0);
                         break;
                     default:
