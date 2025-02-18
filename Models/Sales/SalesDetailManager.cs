@@ -44,7 +44,7 @@ namespace MIdTerm_c_.Models.Sales
                 salesDetail.Price = int.Parse(  Console.ReadLine());
                 salesDetailManagers.Add(salesDetail);
                 Console.WriteLine("Sales added successfully!");
-                salesDetail.Total= salesDetail.Price+salesDetail.QtyIStock;
+                salesDetail.Total= salesDetail.Price * salesDetail.QtyIStock;
             }
 
 
@@ -114,7 +114,7 @@ namespace MIdTerm_c_.Models.Sales
                     roleFind.Price = double.Parse(newprice);
                 double newPrice = double.Parse(newprice);
                 double newqty = double.Parse(newQty);
-                double newTotal = newPrice + newqty;
+                double newTotal = newPrice * newqty;
            if(roleFind.Total !=0)
                 {
 

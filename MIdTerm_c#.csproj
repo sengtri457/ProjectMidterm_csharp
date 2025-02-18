@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Models\PosMenu.cs" />
     <Compile Include="Models\Product\ProductManager.cs" />
+    <Compile Include="Models\Product\SupplierManager.cs" />
+    <Compile Include="Models\Sales\AddStockManager.cs" />
     <Compile Include="Models\Sales\SaleManager.cs" />
     <Compile Include="Models\Sales\SalesDetailManager.cs" />
     <Compile Include="Models\UserRoles\RoleManager.cs" />

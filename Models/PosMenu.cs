@@ -19,16 +19,16 @@ namespace MIdTerm_c_.Models
             try
             {
                     Console.WriteLine("--------------------------------POS-SYSTEM----------------------------------");
-                    Console.WriteLine("1. User-Management");
-                Console.WriteLine("2. UserRole-Management");
-                Console.WriteLine("3. Role-Management");
-                Console.WriteLine("4. View Product");
-                    Console.WriteLine("5.Sales");
-                    Console.WriteLine("6.SalesDetail");
-
-
-
-                    Console.WriteLine("7. Exit");
+                    Console.WriteLine("1. User Management");
+                Console.WriteLine("2. UserRole Management");
+                Console.WriteLine("3. Role Management");
+                Console.WriteLine("4. Product Management");
+                    Console.WriteLine("5. Sales Management");
+                    Console.WriteLine("6. SalesDetail Management");
+                    Console.WriteLine("7. AddStock Management");
+                    Console.WriteLine("8. Suppliers Management");
+                    Console.WriteLine("9. Categories Management");
+                    Console.WriteLine("10. Exit");
                 Console.Write("Please Select Option=  ");
                 int option = int.Parse(Console.ReadLine());
                 switch (option)
@@ -55,10 +55,20 @@ namespace MIdTerm_c_.Models
                             break;
                         case 6:
                             SalesDetailManager salesDetailManager = new SalesDetailManager();
-                            
                             salesDetailManager.SaleDetailManagement();
                             break;
                         case 7:
+                            AddStockManager add = new AddStockManager();
+                            add.AddStockManagement(createdByUser);
+                            break;
+                        case 8:
+                          SupplierManager supplierManager = new SupplierManager();  
+                            supplierManager.SupplierManagement(createdByUser);  
+                            break;
+                        case 9:
+                           
+                            break;
+                        case 10:
                         Environment.Exit(0);
                         break;
                     default:
