@@ -114,16 +114,149 @@ namespace MIdTerm_c_.Models.Product
 
                 Console.WriteLine();
                 Console.WriteLine("------------------------DisPlay-Product---------------------------");
-                Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                 string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", "ID", "Name", "Barcode", "SellPrice", "Qty", "Photo", "CategoryId ", "Created At", "Create By", "Updated At", "Updated By");
                 Console.WriteLine(columnheader);
-                Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
 
                 foreach (var user in productManagers)
                 {
                     string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", user.Id, user.Name, user.Barcode, user.SellPrice, user.QtyInstock, user.Photo,user.Category, user.CreateAt, user.CreateBy, user.UpdateAt, user.UpdateBy);
                     Console.WriteLine(data);
-                    Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+        public void UpdateProduct(string createdByUser)
+        {
+            try
+            {
+                Console.Write("Enter User ID to update: ");
+                int id = int.Parse(Console.ReadLine());
+
+                ProductManager proFind = productManagers.Find(u => u.Id == id);
+                if (proFind == null)
+                {
+                    Console.WriteLine("Product not found.");
+                    return;
+                }
+
+                Console.WriteLine("Leave field blank to keep old value.");
+
+                Console.Write("New name: ");
+                string newUsername = Console.ReadLine();
+                if (!string.IsNullOrEmpty(newUsername))
+                    proFind.Name = newUsername;
+
+                Console.Write("New Barcode: ");
+                string newBarcode = Console.ReadLine();
+                if (!string.IsNullOrEmpty(newBarcode))
+                    proFind.Barcode = newBarcode;
+
+                Console.Write("New SellPrice: ");
+                string newSell = Console.ReadLine();
+                if (!string.IsNullOrEmpty(newSell))
+                    proFind.SellPrice = double.Parse(newSell);
+
+                Console.Write("New QTY: ");
+                string newQTY = Console.ReadLine();
+                if (!string.IsNullOrEmpty(newQTY))
+                    proFind.QtyInstock = int.Parse(newQTY);
+
+                Console.Write("New Photo ");
+                string newPhoto = Console.ReadLine();
+                if (!string.IsNullOrEmpty(newPhoto))
+                    proFind.Photo =newPhoto;
+                Console.Write("New CategoryID ");
+                string newCatID = Console.ReadLine();
+                if (!string.IsNullOrEmpty(newCatID))
+                    proFind.Category = int.Parse(newCatID);
+                proFind.UpdateAt = DateTime.Now;
+                proFind.UpdateBy = createdByUser;
+                proFind.CreateAt =DateTime.Now;
+                proFind.CreateBy = createdByUser;
+
+                Console.WriteLine("User updated successfully!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+        public void DeleteProduct()
+        {
+            try
+            {
+                Console.WriteLine("------------------------Delete-Product----------------------------------");
+                Console.Write("Please Input ID You Want To Remove: ");
+                int id = int.Parse(Console.ReadLine());
+
+                ProductManager ProToDelete = productManagers.Find(u => u.Id == id);
+                if (ProToDelete != null)
+                {
+                    productManagers.Remove(ProToDelete);
+                    Console.WriteLine("Product Removed Successfully!");
+                }
+                else
+                {
+                    Console.WriteLine("ID was Not Found!");
+                }
+            }
+            catch
+            (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+        public void SearchProduct()
+        {
+            try
+            {
+                Console.WriteLine("-------------------Search-Product------------------------");
+            SearchP:
+                Console.Write("Please Input Id or Name You Want To Search: ");
+                string value = Console.ReadLine().Trim();
+
+                List <ProductManager> productlists= new List<ProductManager>();
+
+
+                foreach (var profind in productManagers)
+                {
+                    if (profind.Id.ToString().Contains(value) || profind.Name.Contains(value))
+                    {
+                        productlists.Add(profind);
+                        Console.WriteLine("Product Search Successful!");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("No Product found with the given ID or Name.");
+                        goto SearchP;
+                    }
+                }
+                Console.WriteLine("User Search Successful!");
+                Console.WriteLine("------------------------DisPlay-Product---------------------------");
+                Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", "ID", "Name", "Barcode", "SellPrice", "Qty", "Photo", "CategoryId ", "Created At", "Create By", "Updated At", "Updated By");
+                Console.WriteLine(columnheader);
+                Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+
+                foreach (var user in productlists)
+                {
+                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", user.Id, user.Name, user.Barcode, user.SellPrice, user.QtyInstock, user.Photo, user.Category, user.CreateAt, user.CreateBy, user.UpdateAt, user.UpdateBy);
+                    Console.WriteLine(data);
+                    Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
                 }
             }
             catch (Exception e)
@@ -159,15 +292,15 @@ namespace MIdTerm_c_.Models.Product
                         case 2:
                             pro.DisplayProduct();
                             break;
-                      /*  case 3:
-                            roleManager.UpdateRole(createdByUser);
+                        case 3:
+                            pro.UpdateProduct(createdByUser);
                             break;
                         case 4:
-                            roleManager.SearchRole();
+                            pro.SearchProduct();
                             break;
                         case 5:
-                            roleManager.DeleteRoles();
-                            break;*/
+                            pro.DeleteProduct();
+                            break;
                         case 6:
                             exit = true;
                             break;

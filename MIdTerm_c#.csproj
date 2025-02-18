@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Category\CategoryManager.cs" />
     <Compile Include="Models\PosMenu.cs" />
     <Compile Include="Models\Product\ProductManager.cs" />
     <Compile Include="Models\Product\SupplierManager.cs" />

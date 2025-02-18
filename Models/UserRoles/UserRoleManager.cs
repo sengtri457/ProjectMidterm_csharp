@@ -61,17 +61,19 @@ namespace MIdTerm_c_.Models.UserRoles
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("------------------------DisPlay-User---------------------------");
-                Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("------------------------DisPlay-UserRoles---------------------------");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
                 string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}", "ID", "UserID", "RoleID", "Create At", "CreateBy", "UpdateBy", "Update At");
                 Console.WriteLine(columnheader);
-                Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+
 
                 foreach (var user in UserRoles)
                 {
                     string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}", user.Id, user.UserId, user.RoleId, user.CreateAt, user.CreateBy, user.UpdateBy, user.UpdateAt);
                     Console.WriteLine(data);
-                    Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+
                 }
             }
             catch (Exception e)
@@ -114,7 +116,7 @@ namespace MIdTerm_c_.Models.UserRoles
         {
             try
             {
-                Console.WriteLine("-------------------Search-User------------------------");
+                Console.WriteLine("-------------------Search-UserRoles------------------------");
             SearchP:
                 Console.Write("Please Input Id or Name You Want To Search: ");
                 string value = Console.ReadLine().Trim();
@@ -135,15 +137,18 @@ namespace MIdTerm_c_.Models.UserRoles
                     }
                 }
                 Console.WriteLine("UserRoles Search Successful!");
-                Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+
                 string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}", "ID", "UserID", "RoleID", "Create At", "CreateBy", "UpdateBy", "Update At");
                 Console.WriteLine(columnheader);
-                Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+
                 foreach (var userFind in userRoleList)
                 {
                     string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}", userFind.Id, userFind.UserId, userFind.RoleId, userFind.CreateAt, userFind.CreateBy, userFind.UpdateBy, userFind.UpdateAt);
                     Console.WriteLine(data);
-                    Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
+
                 }
             }
             catch (Exception e)
@@ -157,7 +162,7 @@ namespace MIdTerm_c_.Models.UserRoles
         {
             try
             {
-                Console.WriteLine("------------------------Delete-User----------------------------------");
+                Console.WriteLine("------------------------Delete-UserRoles----------------------------------");
                 Console.Write("Please Input ID You Want To Remove: ");
                 int id = int.Parse(Console.ReadLine());
 
@@ -191,7 +196,7 @@ namespace MIdTerm_c_.Models.UserRoles
 
                 while (!exit)
                 {
-                    Console.WriteLine("\n—————————User categories——————————");
+                    Console.WriteLine("\n—————————UserRoles-categories——————————");
                     Console.WriteLine("1. Add UserRoles");
                     Console.WriteLine("2. Display UsersRoles");
                     Console.WriteLine("3. Update UsersRoels");

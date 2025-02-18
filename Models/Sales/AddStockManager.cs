@@ -60,17 +60,20 @@ namespace MIdTerm_c_.Models.Sales
 
                 Console.WriteLine();
                 Console.WriteLine("------------------------DisPlay-AddStock---------------------------");
-                Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------");
+
                 string columnheader = string.Format("{0,-15}{1,-15}{2,-10}{3,-10}{4,-10}{5,-25}{6,-15}{7,-15}{8,-15}", "ID", "SupplierID", "Qty", "Price", "Amount", "Create At", "CreateBy", "UpdateBy", "Update At");
                 Console.WriteLine(columnheader);
-                Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------");
+
 
 
                 foreach (var addstock3 in addStockManagers)
                 {
                     string data = string.Format("{0,-15}{1,-15}{2,-10}{3,-10}{4,-10}{5,-25}{6,-15}{7,-15}{8,-15}", addstock3.Id, addstock3.SupplierId, addstock3.Qty, addstock3.Price, addstock3.Amount, addstock3.CreateAt, addstock3.CreateBy, addstock3.UpdateBy, addstock3.UpdateAt);
                     Console.WriteLine(data);
-                    Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------");
+
 
                 }
             }
@@ -157,17 +160,19 @@ namespace MIdTerm_c_.Models.Sales
                 }
                 Console.WriteLine("Stock Search Successful!");
                 Console.WriteLine("------------------------DisPlay-AddStock---------------------------");
-                Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------");
+
                 string columnheader = string.Format("{0,-15}{1,-10}{2,-10}{3,-10}{4,-10}{5,-25}{6,-15}{7,-15}{8,-15}", "ID", "SupplierID", "Qty", "Price", "Amount", "Create At", "CreateBy", "UpdateBy", "Update At");
                 Console.WriteLine(columnheader);
-                Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------");
+
 
 
                 foreach (var addstock3 in addStocks)
                 {
                     string data = string.Format("{0,-15}{1,-10}{2,-10}{3,-10}{4,-10}{5,-25}{6,-15}{7,-15}{8,-15}", addstock3.Id, addstock3.SupplierId, addstock3.Qty, addstock3.Price, addstock3.Amount, addstock3.CreateAt, addstock3.CreateBy, addstock3.UpdateBy, addstock3.UpdateAt);
                     Console.WriteLine(data);
-                    Console.WriteLine("-----------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------------------------------------");
 
                 }
             }
