@@ -36,7 +36,7 @@ namespace MIdTerm_c_.Models
                 {
                     case 1:
                        UserManager userManager = new UserManager();
-                        userManager.UserManagement(createdByUser);
+                        userManager.UserManagement(createdByUser );
                         break;
                     case 2:
                             UserRoleManager userRoleManager = new UserRoleManager();
