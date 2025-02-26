@@ -63,13 +63,13 @@ namespace MIdTerm_c_.Models.UserRoles
                 Console.WriteLine();
                 Console.WriteLine("------------------------DisPlay-Roles---------------------------");
                 Console.WriteLine("---------------------------------------------------------------------------------------------------------------------------------");
-                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}", "ID", "RoleName", "Status", "Create At", "CreateBy", "UpdateBy", "Update At");
+                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-25}{4,-15}{5,-15}{6,-25}", "ID", "RoleName", "Status", "Create At", "CreateBy", "UpdateBy", "Update At");
                 Console.WriteLine(columnheader);
                 Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
 
                 foreach (var role in roleManagers)
                 {
-                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}", role.Id, role.RoleName, role.Status, role.CreateAt, role.CreateBy, role.UpdateBy, role.UpdateAt);
+                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-25}{4,-15}{5,-15}{6,-25}", role.Id, role.RoleName, role.Status, role.CreateAt, role.CreateBy, role.UpdateBy, role.UpdateAt);
                     Console.WriteLine(data);
                     Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
                 }
@@ -223,13 +223,13 @@ namespace MIdTerm_c_.Models.UserRoles
                     }
                 }
                 Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
-                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}", "ID", "RoleName", "Status", "Create At", "CreateBy", "UpdateBy", "Update At");
+                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-25}{4,-25}{5,-15}{6,-25}", "ID", "RoleName", "Status", "Create At", "CreateBy", "UpdateBy", "Update At");
                 Console.WriteLine(columnheader);
                 Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
 
                 foreach (var role in rolelist)
                 {
-                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}", role.Id, role.RoleName, role.Status, role.CreateAt, role.CreateBy, role.UpdateBy, role.UpdateAt);
+                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-25}{4,-15}{5,-15}{6,-25}", role.Id, role.RoleName, role.Status, role.CreateAt, role.CreateBy, role.UpdateBy, role.UpdateAt);
                     Console.WriteLine(data);
                     Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
                 }

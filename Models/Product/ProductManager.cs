@@ -115,14 +115,14 @@ namespace MIdTerm_c_.Models.Product
                 Console.WriteLine();
                 Console.WriteLine("------------------------DisPlay-Product---------------------------");
                 Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", "ID", "Name", "Barcode", "SellPrice", "Qty", "Photo", "CategoryId ", "Created At", "Create By", "Updated At", "Updated By");
+                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-25}{6,-15}{7,-25}{8,-25}{9,-25}{10,-25}", "ID", "Name", "Barcode", "SellPrice", "Qty", "Photo", "CategoryId ", "Created At", "Create By", "Updated At", "Updated By");
                 Console.WriteLine(columnheader);
                 Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
 
                 foreach (var user in productManagers)
                 {
-                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", user.Id, user.Name, user.Barcode, user.SellPrice, user.QtyInstock, user.Photo,user.Category, user.CreateAt, user.CreateBy, user.UpdateAt, user.UpdateBy);
+                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-25}{6,-15}{7,-25}{8,-25}{9,-25}{10,-25}", user.Id, user.Name, user.Barcode, user.SellPrice, user.QtyInstock, user.Photo,user.Category, user.CreateAt, user.CreateBy, user.UpdateAt, user.UpdateBy);
                     Console.WriteLine(data);
                     Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
@@ -246,14 +246,14 @@ namespace MIdTerm_c_.Models.Product
                 Console.WriteLine("User Search Successful!");
                 Console.WriteLine("------------------------DisPlay-Product---------------------------");
                 Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", "ID", "Name", "Barcode", "SellPrice", "Qty", "Photo", "CategoryId ", "Created At", "Create By", "Updated At", "Updated By");
+                string columnheader = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-25}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", "ID", "Name", "Barcode", "SellPrice", "Qty", "Photo", "CategoryId ", "Created At", "Create By", "Updated At", "Updated By");
                 Console.WriteLine(columnheader);
                 Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
 
                 foreach (var user in productlists)
                 {
-                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-15}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", user.Id, user.Name, user.Barcode, user.SellPrice, user.QtyInstock, user.Photo, user.Category, user.CreateAt, user.CreateBy, user.UpdateAt, user.UpdateBy);
+                    string data = string.Format("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}{5,-25}{6,-25}{7,-15}{8,-25}{9,-25}{10,-25}", user.Id, user.Name, user.Barcode, user.SellPrice, user.QtyInstock, user.Photo, user.Category, user.CreateAt, user.CreateBy, user.UpdateAt, user.UpdateBy);
                     Console.WriteLine(data);
                     Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
