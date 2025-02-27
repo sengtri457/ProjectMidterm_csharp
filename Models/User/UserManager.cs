@@ -49,8 +49,6 @@ namespace MIdTerm_c_.Models.User
                 while (true)
                 {
                     Console.WriteLine("-----------------------------POS-SYSTEM---------------------------------");
-
-
                     Console.Write("Please Input Username: ");
                     string inputUsername = Console.ReadLine();
 
@@ -62,7 +60,7 @@ namespace MIdTerm_c_.Models.User
                     if (user != null)
                     {
                         Console.WriteLine("Login successful!");
-                        return user.UserName; // Fix: Return the logged-in username
+                        return user.UserName; //Return the logged-in username
                     }
                     else
                     {
